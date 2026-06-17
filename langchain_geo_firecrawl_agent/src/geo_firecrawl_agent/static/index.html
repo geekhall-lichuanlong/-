@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geo Firecrawl Agent</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <header class="brand">
+          <div class="brand-mark">G</div>
+          <div>
+            <h1>Geo Agent</h1>
+            <p>AMap MCP + Firecrawl MCP</p>
+          </div>
+        </header>
+
+        <section class="panel">
+          <label for="threadId">&#x4f1a;&#x8bdd;&#x7ebf;&#x7a0b;</label>
+          <div class="thread-row">
+            <input id="threadId" value="web-demo" autocomplete="off" />
+            <button id="newThread" class="icon-button" title="&#x65b0;&#x5efa;&#x7ebf;&#x7a0b;" aria-label="&#x65b0;&#x5efa;&#x7ebf;&#x7a0b;">+</button>
+          </div>
+          <button id="clearThread" class="wide-button" type="button">&#x6e05;&#x7a7a;&#x5f53;&#x524d;&#x7ebf;&#x7a0b;</button>
+        </section>
+
+        <section class="panel">
+          <div class="switch-row">
+            <div>
+              <strong>&#x7ed3;&#x6784;&#x5316;&#x8f93;&#x51fa;</strong>
+              <span>&#x8fd4;&#x56de;&#x5730;&#x70b9;&#x3001;&#x8def;&#x7ebf;&#x3001;&#x7f51;&#x9875;&#x6765;&#x6e90; JSON</span>
+            </div>
+            <label class="switch">
+              <input id="structured" type="checkbox" checked />
+              <span></span>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="tools-heading">
+            <strong>MCP &#x5de5;&#x5177;</strong>
+            <button id="refreshTools" title="&#x5237;&#x65b0;&#x5de5;&#x5177;" aria-label="&#x5237;&#x65b0;&#x5de5;&#x5177;">R</button>
+          </div>
+          <div id="toolsList" class="tools-list">&#x52a0;&#x8f7d;&#x4e2d;...</div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="chat-area">
+          <div id="messages" class="messages">
+            <article class="message assistant">
+              <div class="avatar">A</div>
+              <div class="bubble">
+                <p>&#x4f60;&#x597d;&#xff0c;&#x6211;&#x53ef;&#x4ee5;&#x8c03;&#x7528;&#x9ad8;&#x5fb7;&#x5730;&#x56fe;&#x548c; Firecrawl&#x3002;&#x8bd5;&#x8bd5;&#x8be2;&#x95ee;&#x8def;&#x7ebf;&#x3001;POI&#x3001;&#x5929;&#x6c14;&#x3001;&#x7f51;&#x9875;&#x6293;&#x53d6;&#x6216;&#x6587;&#x6863;&#x7ed3;&#x6784;&#x5316;&#x3002;</p>
+              </div>
+            </article>
+          </div>
+
+          <form id="chatForm" class="composer">
+            <textarea
+              id="messageInput"
+              rows="3"
+              placeholder="&#x4f8b;&#x5982;&#xff1a;&#x6211;&#x4ece;&#x4e0a;&#x6d77;&#x8679;&#x6865;&#x7ad9;&#x53bb;&#x5916;&#x6ee9;&#xff0c;&#x89c4;&#x5212;&#x5730;&#x94c1;&#x548c;&#x9a7e;&#x8f66;&#x65b9;&#x6848;&#xff0c;&#x5e76;&#x6293;&#x53d6;&#x7f51;&#x9875;&#x6574;&#x7406;&#x5f00;&#x653e;&#x65f6;&#x95f4;&#x548c;&#x6ce8;&#x610f;&#x4e8b;&#x9879;&#x3002;"
+            ></textarea>
+            <div class="composer-actions">
+              <button type="button" id="exampleBtn">&#x793a;&#x4f8b;</button>
+              <button type="submit" id="sendBtn">&#x53d1;&#x9001;</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="result-panel">
+          <div class="result-header">
+            <strong>&#x8c03;&#x7528;&#x7ed3;&#x679c;</strong>
+            <span id="status">&#x5c31;&#x7eea;</span>
+          </div>
+          <section>
+            <h2>&#x672c;&#x8f6e;&#x5de5;&#x5177;</h2>
+            <div id="toolCalls" class="chips empty">&#x6682;&#x65e0;</div>
+          </section>
+          <section>
+            <h2>&#x7ed3;&#x6784;&#x5316;&#x6570;&#x636e;</h2>
+            <pre id="jsonOutput">{}</pre>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
